@@ -1,0 +1,84 @@
+<h2 class="text-light my-5 container-fluid">Edit Contact</h2>
+<div class="container mt-5">
+    <div class="row">
+        <!-- <div class="col-md-6 col-lg-5 c">
+            <div class="card">
+                <form class="form-control" action="">
+                    <input type="text" placeholder="Name" class="my-1 mt-5 form-control">
+                    <input type="text" placeholder="photo url" class="my-1 form-control">
+                    <input type="email" placeholder="Email" class="my-1 form-control">
+                    <input type="number" placeholder="Mobile" class="my-1 form-control mob">
+                    <input type="text" placeholder="Company" class="my-1 form-control">
+                    <input type="text" placeholder="Title" class="my-1 form-control">
+                    <div class="d-flex align-items-center justify-content-around my-4">
+                        <div class="  ">
+                            <button class="btn btn-outline-light  btn-lg ">Edit</button>
+                        </div>
+
+                        <div class="">
+                            <a routerLink="/" class="btn btn-danger   btn-lg">cancel</a>
+
+                        </div>
+
+                    </div>
+                </form>
+
+            </div>
+        </div> -->
+
+
+
+        <div class="col-md-6 col-lg-5 c">
+            <div class="card">
+                <div class="row">
+                    <div class="col-7">
+                        <p>Select default photo</p>
+                    </div>
+                    <div class="col-5">
+                        <select class="form-select form-control text-lg bg-dark" (change)="changeImg($event)"
+                            [(ngModel)]="selected">select avatar
+                            <option [value]="i.value" *ngFor="let i of images">{{i.key}}</option>
+
+                        </select>
+                        <!-- {{selected}} -->
+                    </div>
+                </div>
+                <form class="form-control" (ngSubmit)="updateContact()"   action="">
+                    <input type="text" [(ngModel)]="cdata.name" name="c1" id="c1" placeholder="Name" class="my-1 mt-5 form-control">
+                    
+
+                    <input type="text"  [(ngModel)]="cdata.photo"  name="c2" id="c2"  placeholder="photo url"    class="my-1 form-control">
+                    
+                    <input type="email"  [(ngModel)]="cdata.email"  name="c3" id="c3" placeholder="Email" class="my-1 form-control">
+                   
+                    <input type="number"  [(ngModel)]="cdata.mobile" name="c4" id="c4" placeholder="Mobile" class="my-1 form-control mob">
+                    
+                    <input type="text"  [(ngModel)]="cdata.company"  name="c5" id="c5" placeholder="Company" class="my-1 form-control">
+                   
+                    <input type="text"  [(ngModel)]="cdata.title"  name="c6" id="c6" placeholder="Title" class="my-1 form-control">
+                
+                    <div class="d-flex align-items-center justify-content-around my-4">
+                        <div class="  ">
+                            <button type="submit" class="btn btn-outline-light   btn-lg ">Update</button>
+                        </div>
+
+                        <div class="">
+                            <a routerLink="/" class="btn btn-danger   btn-lg">cancel</a>
+
+                        </div>
+
+                    </div>
+                </form>
+
+
+            </div>
+
+
+        </div>
+        <div class="col-md-5 col-lg-6 ">
+            <div class="text-center my-3">
+                <img class="" src="{{cdata.photo}}" alt="">
+            </div>
+        </div>
+    </div>
+</div>

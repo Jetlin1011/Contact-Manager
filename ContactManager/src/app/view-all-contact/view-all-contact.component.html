@@ -1,0 +1,53 @@
+<div class="container my-5 mb-5" >
+
+    <div class="row ">
+        <div class="col-md-8  ">
+            <div class="row">
+                    <div class="col">
+
+                            <input type="text" [(ngModel)]="searchString" class="form-control">
+                </div>
+                <div class="col">
+                        <button class="btn btn-success ">Search</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h2 class="container">Contacts</h2>
+<div class="container mt-5">
+
+    <!-- {{cdata[0].name}} -->
+    <div class="row ">
+        <div class="col-lg-6 my-2 col-md-6 singlecontact " *ngFor="let i of cdata | filter:searchString: 'name'">
+            <div class="card card-block ">
+                <div class="card-body">
+                    <div class="row align-items-center justify-content-around d-flex ">
+                        <div class="col-sm-2 col-2 ">
+                            <img class="contact-img" src="{{i.photo}}" alt="">
+                        </div>
+                        <div class="col-sm-7 col-8 cont_detail ">
+                            <ul class="fw" style="list-style:none" >
+                                <li>Name: <span class="fw1">{{i.name}}</span></li>
+                                <hr>
+                                <li>Phone: <span class="fw1">{{i.mobile}}</span></li>
+
+                                <hr>
+                                <li>Company: <span class="fw1">{{i.company}}</span> </li>
+
+                                <hr>
+                            </ul>
+                        </div>
+                        <div class="col-sm-1 col-2   ">
+                            <a href="view/{{i.mobile}}" class=" my-2 d-block btn"><li class="font fa fa-eye"></li></a>
+                            <a href="edit/{{i.mobile}}" class="my-2 d-block btn"><li class="font fa fa-pen"></li></a>
+                            <a href="delete/{{i.mobile}}" class=" my-2 d-block btn "><li class="font fa fa-trash-alt"></li></a>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,41 @@
+.card-block{
+    background-color: rgba(15, 85, 110, 0.548);
+}
+
+.contact-img{
+    width: 135px;
+    border-radius: 50%;
+}
+
+@media(max-width:1075px)and (min-width:768px){
+    .contact-img{
+        width: 90px;
+    }
+    .fw{
+        font-size: 0.8rem;
+    }
+    .singlecontact{
+        width: 50%;
+        /* height: 120px; */
+        margin: 0 !important;
+        padding: 3px !important;
+    }
+    .cont_detail{
+        margin:3px !important;
+        padding: 1px !important;
+    }
+    
+}
+
+@media(max-width:575px){
+    .contact-img{
+        width: 70px;
+    } 
+    .fw{
+        font-size: 0.8rem;
+    }
+    .fa{
+        font-size:small;
+    }
+    
+}

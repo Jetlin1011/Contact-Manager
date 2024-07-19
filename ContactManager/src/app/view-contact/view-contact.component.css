@@ -1,0 +1,15 @@
+.card{
+    background-color: rgba(15, 85, 110, 0.548);
+    border-color: rgba(15, 85, 110, 0.548);
+
+    
+}
+
+
+ img{
+    width: 38%;
+    border-radius: 50%;
+/* display: flex;
+align-items: center;
+justify-content: center; */
+ }

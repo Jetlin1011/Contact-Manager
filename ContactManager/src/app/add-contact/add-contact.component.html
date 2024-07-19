@@ -1,0 +1,67 @@
+<h2 class="text-light my-5 container-fluid">Add New Contact</h2>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 col-lg-5 c">
+            <div class="card">
+                <div class="row">
+                    <div class="col-7">
+                        <p>Select default photo</p>
+                    </div>
+                    <div class="col-5">
+                        <select class="form-select form-control text-lg bg-dark" (change)="changeImg($event)"
+                            [(ngModel)]="selected">select avatar
+                            <option [value]="i.value" *ngFor="let i of images">{{i.key}}</option>
+
+                        </select>
+                        <!-- {{selected}} -->
+                    </div>
+                </div>
+                <form class="form-control" (ngSubmit)="addNewContact()"  [formGroup]="newContactForm" action="">
+                    <input type="text" formControlName="name" name="c1" id="c1" placeholder="Name" class="my-1 mt-5 form-control">
+                    <div *ngIf="this.newContactForm.get('name')?.errors && this.newContactForm.get('name')?.touched">
+                        <p class="text-danger">*enter name</p>
+                    </div>
+
+                    <input type="text" formControlName="photo" name="c2" id="c2" [(ngModel)]="selectedimg" placeholder="photo url"    class="my-1 form-control">
+                    <div *ngIf="this.newContactForm.get('photo')?.errors && this.newContactForm.get('photo')?.touched">
+                        <p class="text-danger">*enter photo Url</p>
+                    </div>
+                    <input type="email" formControlName="email" name="c3" id="c3" placeholder="Email" class="my-1 form-control">
+                    <div *ngIf="this.newContactForm.get('email')?.errors && this.newContactForm.get('email')?.touched">
+                        <p class="text-danger">*enter Email id</p>
+                    </div>
+                    <input type="number" formControlName="mobile" name="c4" id="c4" placeholder="Mobile" class="my-1 form-control mob">
+                    <div *ngIf="this.newContactForm.get('mobile')?.errors && this.newContactForm.get('mobile')?.touched">
+                        <p class="text-danger">*enter mobile number</p>
+                    </div>
+                    <input type="text" formControlName="company" name="c5" id="c5" placeholder="Company" class="my-1 form-control">
+                    <div *ngIf="this.newContactForm.get('company')?.errors && this.newContactForm.get('company')?.touched">
+                        <p class="text-danger">*enter company name</p>
+                    </div>
+                    <input type="text" formControlName="title" name="c6" id="c6" placeholder="Title" class="my-1 form-control">
+                    <div *ngIf="this.newContactForm.get('title')?.errors && this.newContactForm.get('title')?.touched">
+                        <p class="text-danger">*enter title</p>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-around my-4">
+                        <div class="  ">
+                            <button type="submit" class="btn btn-outline-light   btn-lg ">create</button>
+                        </div>
+
+                        <div class="">
+                            <a routerLink="/" class="btn btn-danger   btn-lg">cancel</a>
+
+                        </div>
+
+                    </div>
+                </form>
+
+
+            </div>
+        </div>
+        <div class="col-md-5 col-lg-6 ">
+            <div class="text-center my-3">
+                <img class="" src="{{selectedimg}}" alt="">
+            </div>
+        </div>
+    </div>
+</div>
